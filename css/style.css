@@ -1,295 +1,153 @@
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,del,dfn,em,img,ins,kbd,q,samp,small,strong,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,table,tbody,tfoot,thead,tr,th,td,article,aside,footer,header,nav,section {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent
+/*@import url(http://fonts.googleapis.com/css?family=Lato:300italic);*/
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
 body {
-	-webkit-text-size-adjust: none;
-	font-family: sans-serif
+  background: #ffc3d6;
 }
 
-h1 {
-	font-size: 33px;
-	margin: 50px 0 15px;
-	text-align: center;
-	color: #212121
+#cake {
+  display: block;
+  position: relative;
+  margin: -10em auto 0 auto;
 }
 
-h2 {
-	font-size: 14px;
-	font-weight: bold;
-	color: #3c3c3c;
-	margin: 20px 10px 10px
+/* ============================================== Candle
+*/
+.velas {
+  background: #ffffff;
+  border-radius: 10px;
+  position: absolute;
+  top: 228px;
+  left: 50%;
+  margin-left: -2.5px;
+  margin-top: -8.33333333px;
+  width: 5px;
+  height: 35px;
+  -webkit-transform: translateY(-300px);
+  -ms-transform: translateY(-300px);
+  transform: translateY(-300px);
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-animation: in 500ms 6s ease-out forwards;
+  animation: in 500ms 6s ease-out forwards;
 }
 
-small {
-	margin: 0 10px 30px;
-	display: block;
-	font-size: 12px
+.velas:after,
+.velas:before {
+  background: rgba(255, 0, 0, 0.4);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2.22222222px;
 }
 
-a {
-	margin: 0 0 0 10px;
-	font-size: 12px;
-	color: #3c3c3c
+.velas:after {
+  top: 25%;
+  left: 0;
 }
 
-img {
-	border: 0
+.velas:before {
+  top: 45%;
+  left: 0;
 }
 
-ol,ul,li {
-	list-style-type: none
+/* ============================================== Fire
+*/
+.fuego {
+  border-radius: 100%;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  margin-left: -2.2px;
+  width: 6.66666667px;
+  height: 18px;
 }
 
-html,body {
-	width: 100%;
-	height: 100%;
-	transform-style: preserve-3d;
-	backface-visibility: hidden;
-	perspective: 1000;
-	-webkit-transform-style: preserve-3d;
-	-webkit-backface-visibility: hidden;
-	-webkit-perspective: 1000
+.fuego:nth-child(1) {
+  -webkit-animation: fuego 2s 6.5s infinite;
+  animation: fuego 2s 6.5s infinite;
 }
 
-#content {
-	width: 100%;
-	height: 100%;
-	margin: 0 auto;
-	overflow: hidden;
-	position: absolute
+.fuego:nth-child(2) {
+  -webkit-animation: fuego 1.5s 6.5s infinite;
+  animation: fuego 1.5s 6.5s infinite;
 }
 
-.content-wrap {
-	overflow: hidden;
-	position: relative;
-	width: 100%;
-	height: 100%
+.fuego:nth-child(3) {
+  -webkit-animation: fuego 1s 6.5s infinite;
+  animation: fuego 1s 6.5s infinite;
 }
 
-.content-wrap>li {
-	width: 100%;
-	height: 100%;
-	float: left;
-	background-size: 100% 100%;
-	overflow: hidden;
-	position: relative
+.fuego:nth-child(4) {
+  -webkit-animation: fuego 0.5s 6.5s infinite;
+  animation: fuego 0.5s 6.5s infinite;
 }
 
-.charector {
-	position: absolute;
-	left: -6%;
-	top: 55%;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	width: 151px;
-	height: 291px;
-	-webkit-transform: 'translateX(0px)';
-	-webkit-backface-visibility: hidden;
-	-webkit-perspective: 1000;
-	background:url(../images/boy.png) -0px -291px no-repeat
+.fuego:nth-child(5) {
+  -webkit-animation: fuego 0.2s 6.5s infinite;
+  animation: fuego 0.2s 6.5s infinite;
 }
 
-.slowWalk {
-	-webkit-animation-name: person-slow;
-	-webkit-animation-duration: 950ms;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-timing-function: steps(1,start);
-	-moz-animation-name: person-slow;
-	-moz-animation-duration: 950ms;
-	-moz-animation-iteration-count: infinite;
-	-moz-animation-timing-function: steps(1,start)
+/* ============================================== Animation Fire
+*/
+@-webkit-keyframes fuego {
+  0%, 100% {
+    background: rgba(254, 248, 97, 0.5);
+    -webkit-box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+    box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+    -webkit-transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    background: rgba(255, 50, 0, 0.1);
+    -webkit-box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    -webkit-transform: translateY(-20px) scale(0);
+    transform: translateY(-20px) scale(0);
+  }
 }
+@keyframes fuego {
+  0%, 100% {
+    background: rgba(254, 248, 97, 0.5);
+    -webkit-box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+    box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+    -webkit-transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1);
+  }
 
-.slowFlolerWalk {
-	-webkit-animation-name: person-floler-slow;
-	-webkit-animation-duration: 950ms;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-timing-function: step-start;
-	-moz-animation-name: person-floler-slow;
-	-moz-animation-duration: 950ms;
-	-moz-animation-iteration-count: infinite;
-	-moz-animation-timing-function: step-start
+  50% {
+    background: rgba(255, 50, 0, 0.1);
+    -webkit-box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    -webkit-transform: translateY(-20px) scale(0);
+    transform: translateY(-20px) scale(0);
+  }
 }
-
-.pauseWalk {
-	-webkit-animation-play-state: paused
+@-webkit-keyframes in {
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
 }
-
-.boyOriginal {
-	background-position: -150px -0px
+@keyframes in {
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
 }
-
-@-webkit-keyframes person-slow {
-	0% {
-		background-position: -0px -291px
-	}
-
-	25% {
-		background-position: -602px -0px
-	}
-
-	50% {
-		background-position: -302px -291px
-	}
-
-	75% {
-		background-position: -151px -291px
-	}
-
-	100% {
-		background-position: -0px -291px
-	}
+.text {
+  color: #8b6a60;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
 }
-
-@-moz-keyframes person-slow {
-	0% {
-		background-position: -0px -291px
-	}
-
-	25% {
-		background-position: -602px -0px
-	}
-
-	50% {
-		background-position: -302px -291px
-	}
-
-	75% {
-		background-position: -151px -291px
-	}
-
-	100% {
-		background-position: -0px -291px
-	}
-}
-
-@-webkit-keyframes person-floler-slow {
-	0% {
-		background-position: -453px -0px
-	}
-
-	25% {
-		background-position: -904px -0px
-	}
-
-	50% {
-		background-position: -451px -0px
-	}
-
-	75% {
-		background-position: -753px -0px
-	}
-
-	100% {
-		background-position: -300px -0px
-	}
-}
-
-@-moz-keyframes person-floler-slow {
-	0% {
-		background-position: -453px -0px
-	}
-
-	25% {
-		background-position: -904px -0px
-	}
-
-	50% {
-		background-position: -451px -0px
-	}
-
-	75% {
-		background-position: -753px -0px
-	}
-
-	100% {
-		background-position: -300px -0px
-	}
-}
-
-.boy-rotate {
-	-webkit-animation-name: boy-rotate;
-	-webkit-animation-duration: 850ms;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: step-start;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-name: boy-rotate;
-	-moz-animation-duration: 850ms;
-	-moz-animation-iteration-count: 1;
-	-moz-animation-timing-function: step-start;
-	-moz-animation-fill-mode: forwards
-}
-
-@-webkit-keyframes boy-rotate {
-	0% {
-		background-position: -603px -291px
-	}
-
-	16.7% {
-		background-position: -150px -0px
-	}
-
-	33.4% {
-		background-position: -453px -291px
-	}
-
-	50.1% {
-		background-position: -0px -0px
-	}
-
-	66.8% {
-		background-position: -903px -291px
-	}
-
-	83.5% {
-		background-position: -753px -291px
-	}
-
-	100% {
-		background-position: -603px -291px
-	}
-}
-
-@-moz-keyframes boy-rotate {
-	16.7% {
-		background-position: -150px -0px
-	}
-
-	33.4% {
-		background-position: -453px -291px
-	}
-
-	50.1% {
-		background-position: -0px -0px
-	}
-
-	66.8% {
-		background-position: -903px -291px
-	}
-
-	83.5% {
-		background-position: -753px -291px
-	}
-
-	100% {
-		background-position: -603px -291px
-	}
-}
-
-.button {
-	position: absolute;
-	top: 82%
-}
-
-button {
-	width: 80px;
-	height: 50px
+.text h1 {
+  font-size: 1.4em;
 }
